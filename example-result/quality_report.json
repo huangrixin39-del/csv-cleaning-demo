@@ -1,0 +1,29 @@
+{
+  "input_file": "input.csv",
+  "input_encoding": "utf-8-sig",
+  "output_encoding": "utf-8-sig",
+  "columns": [
+    "customer_id",
+    "name",
+    "email",
+    "date_text",
+    "amount_text",
+    "notes"
+  ],
+  "trim_columns": [
+    "name",
+    "email"
+  ],
+  "required_columns": [
+    "name",
+    "email"
+  ],
+  "deduplicate": true,
+  "input_rows": 6,
+  "output_rows": 5,
+  "duplicate_rows": 1,
+  "removed_rows": 1,
+  "changed_rows": 3,
+  "changed_fields": 6,
+  "review_rows": 2
+}
