@@ -1,0 +1,7 @@
+﻿source_line,column,old_value,new_value
+2,name, Alice ,Alice
+2,email, alice@example.test ,alice@example.test
+4,name, Bob ,Bob
+4,email, ,
+5,name, 王小明 ,王小明
+5,email, wang@example.test ,wang@example.test
