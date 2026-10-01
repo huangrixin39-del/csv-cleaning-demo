@@ -1,0 +1,7 @@
+customer_id,name,email,date_text,amount_text,notes
+0007, Alice , alice@example.test ,01/02/2026,"1,000.00", demo A 
+0007,Alice,alice@example.test,01/02/2026,"1,000.00", demo A 
+0012, Bob , ,2026-03-04,1000.00,Missing email
+0013, 王小明 , wang@example.test ,04-03-2026,1000,"Comma, retained"
+0014,,,2026/03/05,,Missing name and email
+0015,Alice,alice@example.test,01/02/2026,"1,000.00",Different ID retained
