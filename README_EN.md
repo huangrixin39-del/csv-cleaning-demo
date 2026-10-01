@@ -1,6 +1,6 @@
 # CSV Cleanup Demo
 
-A small Python command-line tool with explicit cleaning rules and traceable results. This is an **AI-assisted portfolio demonstration using synthetic data**, not a previous client engagement or evidence of earnings.
+Built a Python command-line tool for selective whitespace cleanup, exact row deduplication and missing-field review. The delivery includes runnable code, field-level change logs, five output files and 12 automated tests.
 
 ## Run
 
@@ -31,7 +31,7 @@ Choose an output directory that does not already exist. The included `example-re
 | Changed fields | 6 |
 | Retained records requiring review | 2 |
 
-The sample covers leading-zero IDs, Chinese text, quoted commas, missing values, varied date/amount text and duplicates. All email addresses use the reserved `.test` domain.
+Sample data covers leading-zero IDs, Chinese text, quoted commas, missing values, varied date/amount text and duplicates.
 
 ## Deliverables
 
@@ -43,16 +43,16 @@ The sample covers leading-zero IDs, Chinese text, quoted commas, missing values,
 | `review.csv` | Retained records with missing required fields |
 | `quality_report.json` | Counts and the rules used; input filename only, no local directory |
 
-Evidence records use JSON arrays inside CSV fields to avoid collisions with client column names. Source lines refer to physical starting lines, including records containing quoted newlines. The change log includes changes to rows later removed as duplicates.
+Evidence records use JSON arrays inside CSV fields to preserve input column names. Source lines refer to physical starting lines, including records containing quoted newlines. The change log includes changes to rows later removed as duplicates.
 
-## Scope and limitations
+## Input and processing rules
 
 - Comma-delimited CSV with a header; UTF-8 or UTF-8 BOM input. Default `utf-8-sig` accepts both. Output CSV uses UTF-8 BOM.
 - Headers are case-sensitive and matched exactly. Empty names and duplicate names after outer-whitespace comparison are rejected.
 - Incorrect field counts, unknown requested columns, invalid encoding and parser-detected syntax errors are rejected with exit code 2.
 - Single-column CSV is valid, so an arbitrary other-delimiter file cannot always be distinguished from single-column CSV. Specifying required columns checks the expected structure.
-- No XLSX support, type conversion, fuzzy matching, date inference, email-address validation or external-system integration.
-- Records are held in memory. This demonstration targets small files, not multi-gigabyte datasets.
+- Processing covers one CSV file, text fields and exact full-row matching.
+- Records are held in memory; the tool is designed for small local CSV exports.
 - Spreadsheet software can reinterpret CSV text on opening; import ID columns as text to preserve their display.
 - A disk/permission error during output may leave an incomplete new folder. Inspect it and choose a new folder for a retry.
 
